@@ -2,7 +2,7 @@ version: '2.1'
 
 services:
     rt1:
-        image: baseimage:latest
+        image: tema1:latest
         volumes:
             - .:/elocal
         tty: true
@@ -10,7 +10,7 @@ services:
             - tnet2
         command: ["tcpdump","-nSt","icmp"]
     rt2:
-        image: baseimage:latest
+        image: tema1:latest
         volumes:
             - .:/elocal
         tty: true
@@ -20,7 +20,7 @@ services:
         depends_on:
             - rt1
     rt3:
-        image: baseimage:latest
+        image: tema1:latest
         volumes:
             - .:/elocal
         tty: true
@@ -32,7 +32,7 @@ services:
         sysctls:
             - net.ipv4.icmp_echo_ignore_all=1
     rt4:
-        image: baseimage:latest
+        image: tema1:latest
         volumes:
             - .:/elocal
         tty: true
